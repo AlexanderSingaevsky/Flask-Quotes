@@ -1,9 +1,10 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from database.models import Base
 
-postgres = 'postgresql://postgres:29an99fr@192.168.1.242:5432/db_quotes'
+postgres = os.environ.get("DATABASE_URI")
 
 
 engine = create_engine(postgres)
